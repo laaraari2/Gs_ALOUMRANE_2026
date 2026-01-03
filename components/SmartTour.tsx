@@ -58,14 +58,17 @@ const SmartTour: React.FC<Props> = ({ lang, isOpen, onClose }) => {
     // Try to find voice for the language
     let selectedVoice = null;
 
-    if (language === 'ar') {
-      selectedVoice = voices.find(v => v.lang.startsWith('ar'));
+    // Enhanced Voice Selection for Literary French
+    // 1. Prioritize Google/Microsoft French voices (usually higher quality)
+    // 2. Fallback to any French voice
+    if (language === 'ar' || language === 'fr') {
+      selectedVoice = voices.find(v => v.lang.startsWith('fr') && (v.name.includes('Google') || v.name.includes('Microsoft') || v.name.includes('Thomas') || v.name.includes('Amelie')));
+
       if (!selectedVoice) {
-        // Fallback to English for Arabic text
-        selectedVoice = voices.find(v => v.lang.startsWith('en')) || voices[0];
+        selectedVoice = voices.find(v => v.lang.startsWith('fr'));
       }
-    } else {
-      selectedVoice = voices.find(v => v.lang.startsWith('fr'));
+
+      // Last resort fallback
       if (!selectedVoice) {
         selectedVoice = voices.find(v => v.lang.startsWith('en')) || voices[0];
       }
@@ -76,8 +79,9 @@ const SmartTour: React.FC<Props> = ({ lang, isOpen, onClose }) => {
       utterance.lang = selectedVoice.lang;
     }
 
-    utterance.rate = 0.9;
-    utterance.pitch = 1.0;
+    // Literary Style Settings
+    utterance.rate = 0.85; // Slightly slower for better enunciation
+    utterance.pitch = 1.0; // Natural, neutral pitch
     utterance.volume = 1.0;
 
     utterance.onstart = () => setIsSpeaking(true);

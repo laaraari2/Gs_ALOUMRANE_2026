@@ -667,35 +667,39 @@ const App: React.FC = () => {
     <div className={`min-h-screen selection:bg-[#f97316] selection:text-white ${lang === 'ar' ? 'rtl-layout' : 'ltr-layout'}`}>
 
       {/* 1. TOP BAR */}
-      <div className="hidden md:block fixed top-0 w-full z-[110] bg-[#0f172a] text-white py-2 px-4 lg:px-16 border-b border-white/5">
+      {/* 1. TOP BAR */}
+      <div className="fixed top-0 w-full z-[110] bg-[#0f172a] text-white py-2 px-3 md:px-4 lg:px-16 border-b border-white/5">
         <div className="max-w-[1600px] mx-auto flex justify-between items-center">
           {/* Left Side - Phone */}
-          <div className="flex items-center gap-8">
-            <a href="tel:0522972524" className="flex items-center gap-3 hover:text-[#f97316] transition-colors group">
-              <div className="w-9 h-9 bg-[#f97316] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Phone size={18} className="text-white" />
+          <div className="flex items-center gap-4 md:gap-8">
+            <a href="tel:0522972524" className="flex items-center gap-2 md:gap-3 hover:text-[#f97316] transition-colors group">
+              <div className="w-8 h-8 md:w-9 md:h-9 bg-[#f97316] rounded-lg md:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Phone size={16} className="text-white md:hidden" />
+                <Phone size={18} className="text-white hidden md:block" />
               </div>
-              <span dir="ltr" className="font-black text-sm tracking-wide hidden sm:block">05 22 97 25 24</span>
+              <span dir="ltr" className="font-black text-xs md:text-sm tracking-wide">05 22 97 25 24</span>
             </a>
           </div>
 
           {/* Right Side - Social Icons & Language */}
-          <div className="flex items-center gap-4">
-            {/* Social Icons - Hidden on Mobile */}
-            <div className="hidden md:flex items-center gap-2">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white/10 rounded-xl flex items-center justify-center hover:bg-[#1877F2] transition-all group">
-                <Facebook size={18} className="text-white" />
+          <div className="flex items-center gap-3 md:gap-4">
+            {/* Social Icons - Simplified on Mobile */}
+            <div className="flex items-center gap-1.5 md:gap-2">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-8 h-8 md:w-9 md:h-9 bg-white/10 rounded-lg md:rounded-xl flex items-center justify-center hover:bg-[#1877F2] transition-all group">
+                <Facebook size={16} className="text-white md:hidden" />
+                <Facebook size={18} className="text-white hidden md:block" />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white/10 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#F77737] transition-all group">
-                <Instagram size={18} className="text-white" />
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-8 h-8 md:w-9 md:h-9 bg-white/10 rounded-lg md:rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#F77737] transition-all group">
+                <Instagram size={16} className="text-white md:hidden" />
+                <Instagram size={18} className="text-white hidden md:block" />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white/10 rounded-xl flex items-center justify-center hover:bg-[#FF0000] transition-all group">
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hidden sm:flex w-9 h-9 bg-white/10 rounded-xl items-center justify-center hover:bg-[#FF0000] transition-all group">
                 <Youtube size={18} className="text-white" />
               </a>
             </div>
 
-            {/* Separator - Hidden on Mobile */}
-            <div className="hidden md:block w-px h-6 bg-white/20 mx-2" />
+            {/* Separator */}
+            <div className="w-px h-5 md:h-6 bg-white/20 mx-1 md:mx-2" />
 
             {/* Language Toggle */}
             <LanguageToggle lang={lang} setLang={setLang} />
