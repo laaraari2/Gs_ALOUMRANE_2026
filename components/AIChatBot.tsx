@@ -42,11 +42,11 @@ const AIChatBot: React.FC<Props> = ({ lang }) => {
   };
 
   return (
-    <div className={`fixed bottom-10 ${lang === 'ar' ? 'left-10' : 'right-10'} z-[60]`}>
+    <div className={`fixed bottom-4 sm:bottom-10 ${lang === 'ar' ? 'left-4 sm:left-10' : 'right-4 sm:right-10'} z-[60]`}>
       {isOpen ? (
-        <div className="w-[380px] sm:w-[440px] h-[600px] bg-white rounded-[2.5rem] shadow-2xl flex flex-col border border-slate-100 overflow-hidden animate-in fade-in slide-in-from-bottom-10 duration-500">
+        <div className="w-[calc(100vw-2rem)] sm:w-[440px] h-[calc(100vh-12rem)] max-h-[600px] sm:h-[600px] bg-white rounded-[2rem] sm:rounded-[2.5rem] shadow-2xl flex flex-col border border-slate-100 overflow-hidden animate-in fade-in slide-in-from-bottom-10 duration-500">
           {/* Header - Concierge Style */}
-          <div className="bg-[#1e1b4b] p-6 text-white flex justify-between items-center relative">
+          <div className="bg-[#1e1b4b] p-4 sm:p-6 text-white flex justify-between items-center relative">
             <div className="flex items-center gap-4 relative z-10">
               <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center backdrop-blur-md">
                 <Headphones size={24} className="text-[#f97316]" />
@@ -65,7 +65,7 @@ const AIChatBot: React.FC<Props> = ({ lang }) => {
           </div>
 
           {/* Messages */}
-          <div ref={scrollRef} className="flex-1 overflow-y-auto p-6 space-y-4 bg-slate-50/50">
+          <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 bg-slate-50/50">
             {messages.map((m, i) => (
               <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div className={`max-w-[85%] p-4 rounded-2xl text-sm leading-relaxed shadow-sm ${m.role === 'user'
@@ -86,7 +86,7 @@ const AIChatBot: React.FC<Props> = ({ lang }) => {
           </div>
 
           {/* Input */}
-          <div className="p-6 border-t border-slate-100 bg-white">
+          <div className="p-4 sm:p-6 border-t border-slate-100 bg-white">
             <div className="relative">
               <input
                 type="text"
