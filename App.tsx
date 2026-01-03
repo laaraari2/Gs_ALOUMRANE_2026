@@ -22,6 +22,17 @@ const App: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isTourOpen, setIsTourOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  // Sync document lang
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  }, [lang]);
 
   // Handle Scroll logic for Navbar
   useEffect(() => {
@@ -644,6 +655,8 @@ const App: React.FC = () => {
       </div>
     </div>
   );
+
+  if (!isMounted) return null;
 
   return (
     <div className={`min-h-screen selection:bg-[#f97316] selection:text-white ${lang === 'ar' ? 'rtl-layout' : 'ltr-layout'}`}>
