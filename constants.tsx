@@ -62,7 +62,7 @@ export const PROGRAMS: Program[] = [
   {
     id: 'maternelle',
     title: { ar: 'التعليم الأولي', fr: 'Maternelle' },
-    description: { 
+    description: {
       ar: 'منهج "مونتيسوري" المطور لتنمية مهارات الطفل اللغوية والاجتماعية في بيئة محفزة.',
       fr: 'Pédagogie active pour l\'éveil sensoriel et l\'autonomie précoce de l\'enfant.'
     },
@@ -72,7 +72,7 @@ export const PROGRAMS: Program[] = [
   {
     id: 'primaire',
     title: { ar: 'التعليم الابتدائي', fr: 'Primaire' },
-    description: { 
+    description: {
       ar: 'تركيز على التميز العلمي واللغوي مع مواكبة فردية لكل تلميذ لضمان التفوق.',
       fr: 'Socle d\'excellence bilingue avec un suivi personnalisé pour chaque talent.'
     },
@@ -82,7 +82,7 @@ export const PROGRAMS: Program[] = [
   {
     id: 'secondaire',
     title: { ar: 'الثانوي والإعدادي', fr: 'Collège & Lycée' },
-    description: { 
+    description: {
       ar: 'توجيه جامعي استراتيجي ومختبرات علمية متطورة تفتح آفاق المدارس الكبرى.',
       fr: 'Orientation stratégique et laboratoires de pointe pour intégrer les grandes écoles.'
     },
@@ -140,15 +140,39 @@ export const TESTIMONIALS: Testimonial[] = [
 
 export const TOUR_STATIONS = [
   {
-    id: 'smart-class',
-    title: { ar: 'الفصول الذكية', fr: 'Smart Classes' },
-    description: { ar: 'فصول مجهزة بتقنيات العرض الرباعية والألواح اللمسية.', fr: 'Salles équipées de technologies de projection 4D et tablettes interactives.' },
-    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=1200'
+    id: 'swimming-pool',
+    title: { ar: 'المسبح', fr: 'Piscine' },
+    description: { ar: 'مسبح مغطى ومجهز وفق المعايير الدولية لتعليم السباحة وتنظيم الأنشطة المائية على مدار السنة.', fr: 'Piscine couverte aux normes internationales pour l\'apprentissage de la natation et les activités aquatiques toute l\'année.' },
+    image: 'https://images.unsplash.com/photo-1576610616656-d3aa5d1f4534?auto=format&fit=crop&q=80&w=1200'
   },
   {
-    id: 'sport-hub',
-    title: { ar: 'المركب الرياضي', fr: 'Sport Hub' },
-    description: { ar: 'مسبح مغطى وملاعب احترافية لتطوير اللياقة البدنية.', fr: 'Piscine couverte et terrains pro pour l\'épanouissement physique.' },
-    image: 'https://images.unsplash.com/photo-1541534741688-6078c64b52d2?auto=format&fit=crop&q=80&w=1200'
+    id: 'library',
+    title: { ar: 'المكتبة', fr: 'Bibliothèque' },
+    description: { ar: 'مكتبة عصرية غنية بآلاف الكتب والمراجع العلمية والأدبية مع فضاءات مريحة للقراءة والمطالعة.', fr: 'Bibliothèque moderne riche en milliers de livres et références scientifiques avec des espaces de lecture confortables.' },
+    image: '/images/school_library.png'
+  },
+  {
+    id: 'sports-field',
+    title: { ar: 'الملعب', fr: 'Terrain de Sport' },
+    description: { ar: 'ملعب رياضي متعدد الاستخدامات بعشب اصطناعي عالي الجودة لممارسة كرة القدم وألعاب القوى والأنشطة الرياضية.', fr: 'Terrain multisports en gazon synthétique de haute qualité pour le football, l\'athlétisme et les activités sportives.' },
+    image: '/images/sports_field.png'
+  },
+  {
+    id: 'computer-lab',
+    title: { ar: 'قاعة الإعلاميات', fr: 'Salle Informatique' },
+    description: { ar: 'قاعة مجهزة بأحدث الحواسيب والبرمجيات التعليمية لتعلم البرمجة والتكنولوجيا الحديثة.', fr: 'Salle équipée des derniers ordinateurs et logiciels éducatifs pour l\'apprentissage de la programmation et des nouvelles technologies.' },
+    image: 'https://images.unsplash.com/photo-1606761568499-6d2451b23c66?auto=format&fit=crop&q=80&w=1200'
+  },
+  {
+    id: 'garden',
+    title: { ar: 'البستنة', fr: 'Jardin Pédagogique' },
+    description: { ar: 'حديقة تعليمية لتعريف التلاميذ بالزراعة والبيئة والاستدامة من خلال أنشطة عملية ممتعة.', fr: 'Jardin éducatif pour initier les élèves à l\'agriculture, l\'environnement et la durabilité à travers des activités pratiques.' },
+    image: '/images/school_garden.png'
+  },
+  {
+    id: 'smart-class',
+    title: { ar: 'فصل السبورة التفاعلية', fr: 'Classe Interactive' },
+    description: { ar: 'فصول ذكية مجهزة بسبورات تفاعلية وتقنيات عرض متطورة لتجربة تعليمية تفاعلية وممتعة.', fr: 'Classes intelligentes équipées de tableaux interactifs et de technologies de projection avancées pour une expérience éducative immersive.' },
+    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=1200'
   }
 ];
