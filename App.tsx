@@ -78,17 +78,17 @@ const App: React.FC = () => {
                 <div className="w-2 h-2 bg-[#f97316] rounded-full animate-ping" />
                 {t('الريادة في التعليم الخاص بالدار البيضاء', 'Leader de l\'Enseignement Privé à Casablanca')}
               </div>
-              <h1 className="text-7xl lg:text-[105px] font-black leading-[0.9] tracking-tighter text-[#0f172a]">
+              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[105px] font-black leading-[1.1] lg:leading-[0.9] tracking-tighter text-[#0f172a]">
                 {t('مستقبلهم ', 'Leur Futur ')}<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f97316] to-[#ea580c]">{t('يبدأ من هنا', 'Commence Ici')}</span>
               </h1>
-              <p className="text-2xl text-slate-500 max-w-xl leading-relaxed font-medium">
+              <p className="text-lg md:text-2xl text-slate-500 max-w-xl leading-relaxed font-medium">
                 {t('نحن لا نقدم مجرد دروس، بل نصمم تجربة تعليمية فريدة تهدف لبناء قادة الغد بمهارات عالمية وقيم أصيلة.', 'Bien plus qu\'une école, nous forgeons les leaders de demain avec une excellence académique et des valeurs fortes.')}
               </p>
               <div className="flex flex-wrap gap-6 pt-6">
                 <button
                   onClick={() => navigateTo('admissions')}
-                  className="group bg-[#0f172a] text-white px-12 py-6 rounded-[2rem] font-black text-xl shadow-luxury hover:scale-105 active:scale-95 transition-all flex items-center gap-4 overflow-hidden relative"
+                  className="group bg-[#0f172a] text-white px-8 md:px-12 py-4 md:py-6 rounded-2xl md:rounded-[2rem] font-black text-lg md:text-xl shadow-luxury hover:scale-105 active:scale-95 transition-all flex items-center gap-4 overflow-hidden relative"
                 >
                   <span className="relative z-10">{t('سجل الآن', 'S\'inscrire')}</span>
                   <ArrowUpRight size={22} className="relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -96,7 +96,7 @@ const App: React.FC = () => {
                 </button>
                 <button
                   onClick={() => setIsTourOpen(true)}
-                  className="px-12 py-6 rounded-[2rem] font-black text-xl border-2 border-slate-200 bg-white/50 backdrop-blur-md hover:bg-slate-50 transition-all flex items-center gap-4 group"
+                  className="px-8 md:px-12 py-4 md:py-6 rounded-2xl md:rounded-[2rem] font-black text-lg md:text-xl border-2 border-slate-200 bg-white/50 backdrop-blur-md hover:bg-slate-50 transition-all flex items-center gap-4 group"
                 >
                   {t('جولة افتراضية', 'Tour Virtuel')}
                   <Play size={20} className="text-[#f97316] group-hover:scale-125 transition-transform" fill="currentColor" />
@@ -139,7 +139,7 @@ const App: React.FC = () => {
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#f97316]/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2" />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-8 relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 lg:gap-8 relative z-10">
               {[
                 { label: { ar: 'تلميذ شغوف', fr: 'Élèves Passionnés' }, val: '1200+', icon: <Users size={32} /> },
                 { label: { ar: 'أستاذ خبير', fr: 'Corps Enseignant' }, val: '150+', icon: <UserCheck size={32} /> },
@@ -187,7 +187,7 @@ const App: React.FC = () => {
 
             {/* MAGNIFICENT SINGLE-LINE TITLE - FIXED RESPONSIVE SIZE */}
             <div className="relative group w-full text-center overflow-visible">
-              <h2 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter text-[#0f172a] whitespace-nowrap animate-reveal delay-100 leading-none">
+              <h2 className="text-3xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter text-[#0f172a] md:whitespace-nowrap animate-reveal delay-100 leading-none">
                 {t('قالوا عن العمران', 'ILS ONT DIT SUR AL OUMRANE')}
               </h2>
               <div className="h-1.5 w-24 group-hover:w-48 bg-gradient-to-r from-[#f97316] to-[#ea580c] transition-all duration-1000 mx-auto rounded-full mt-8" />
@@ -453,7 +453,7 @@ const App: React.FC = () => {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-4xl mb-32">
           <span className="text-[#f97316] font-black uppercase tracking-[0.4em] text-xs">{t('قصتنا', 'Notre Histoire')}</span>
-          <h2 className="text-5xl lg:text-6xl font-black text-[#0f172a] mt-6 tracking-tighter leading-[0.95] whitespace-nowrap">
+          <h2 className="text-4xl md:text-6xl font-black text-[#0f172a] mt-6 tracking-tighter leading-[1.1] md:leading-[0.95]">
             {t('أكثر من مجرد مدرسة، نحن عائلة واحدة', 'Plus qu\'une École, une Grande Famille')}
           </h2>
         </div>
@@ -491,7 +491,7 @@ const App: React.FC = () => {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="text-center mb-32">
           <span className="text-[#f97316] font-black uppercase tracking-[0.4em] text-xs">{t('مساراتنا', 'Nos Cycles')}</span>
-          <h2 className="text-6xl font-black text-[#0f172a] mt-6 tracking-tighter">{t('رحلة التعلم من المهد إلى التميز', 'Le Parcours de la Réussite')}</h2>
+          <h2 className="text-4xl md:text-6xl font-black text-[#0f172a] mt-6 tracking-tighter">{t('رحلة التعلم من المهد إلى التميز', 'Le Parcours de la Réussite')}</h2>
         </div>
         <div className="grid lg:grid-cols-3 gap-12">
           {PROGRAMS.map((p, i) => (
@@ -504,7 +504,7 @@ const App: React.FC = () => {
               </div>
               <div className="p-12 space-y-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-4xl font-black text-[#0f172a] tracking-tight mb-4">{t(p.title.ar, p.title.fr)}</h3>
+                  <h3 className="text-2xl md:text-4xl font-black text-[#0f172a] tracking-tight mb-4">{t(p.title.ar, p.title.fr)}</h3>
                   <p className="text-lg text-slate-500 leading-relaxed font-medium">{t(p.description.ar, p.description.fr)}</p>
                 </div>
                 <button onClick={() => navigateTo('admissions')} className="flex items-center gap-3 text-[#f97316] font-black uppercase tracking-widest text-[10px] group-hover:gap-6 transition-all">
@@ -525,7 +525,7 @@ const App: React.FC = () => {
         <div className="flex flex-col lg:flex-row justify-between items-end gap-12 mb-32">
           <div className="max-w-2xl">
             <span className="text-[#f97316] font-black uppercase tracking-[0.4em] text-xs">{t('فضاءاتنا', 'Campus')}</span>
-            <h2 className="text-6xl font-black text-[#0f172a] mt-6 tracking-tighter leading-tight">{t('بيئة ذكية مصممة للإبداع', 'Infrastructures')}</h2>
+            <h2 className="text-4xl md:text-6xl font-black text-[#0f172a] mt-6 tracking-tighter leading-tight">{t('بيئة ذكية مصممة للإبداع', 'Infrastructures')}</h2>
           </div>
           <button onClick={() => setIsTourOpen(true)} className="px-10 py-5 bg-[#0f172a] text-white rounded-full font-black text-[11px] uppercase tracking-widest hover:bg-[#f97316] transition-all flex items-center gap-3">
             <Play size={18} fill="currentColor" />
@@ -676,8 +676,8 @@ const App: React.FC = () => {
 
           {/* Right Side - Social Icons & Language */}
           <div className="flex items-center gap-4">
-            {/* Social Icons */}
-            <div className="flex items-center gap-2">
+            {/* Social Icons - Hidden on Mobile */}
+            <div className="hidden md:flex items-center gap-2">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white/10 rounded-xl flex items-center justify-center hover:bg-[#1877F2] transition-all group">
                 <Facebook size={18} className="text-white" />
               </a>
@@ -689,8 +689,8 @@ const App: React.FC = () => {
               </a>
             </div>
 
-            {/* Separator */}
-            <div className="w-px h-6 bg-white/20 mx-2" />
+            {/* Separator - Hidden on Mobile */}
+            <div className="hidden md:block w-px h-6 bg-white/20 mx-2" />
 
             {/* Language Toggle */}
             <LanguageToggle lang={lang} setLang={setLang} />
@@ -703,11 +703,11 @@ const App: React.FC = () => {
         <div className={`max-w-[1600px] mx-auto rounded-[2.5rem] px-6 lg:px-10 py-4 flex items-center bg-white/95 backdrop-blur-2xl shadow-luxury border border-slate-200/50 ${lang === 'ar' ? 'flex-row' : 'flex-row-reverse'}`}>
 
           {/* Logo & Name Section - Always first in DOM, positioned by flex direction */}
-          <div className={`flex items-center gap-4 cursor-pointer ${lang === 'ar' ? 'flex-row-reverse' : 'flex-row'}`} onClick={() => navigateTo('home')}>
-            <img src="/images/logo.png" alt={t('شعار مجموعة مدارس العمران', 'Logo Al Oumrane')} className="w-12 h-12 lg:w-14 lg:h-14 rounded-2xl object-contain shadow-lg" />
+          <div className={`flex items-center gap-3 lg:gap-4 cursor-pointer ${lang === 'ar' ? 'flex-row-reverse' : 'flex-row'}`} onClick={() => navigateTo('home')}>
+            <img src="/images/logo.png" alt={t('شعار مجموعة مدارس العمران', 'Logo Al Oumrane')} className="w-10 h-10 lg:w-14 lg:h-14 rounded-xl lg:rounded-2xl object-contain shadow-lg" />
             <div className={`flex flex-col ${lang === 'ar' ? 'text-right' : 'text-left'}`}>
-              <h1 className="font-black text-xl lg:text-2xl tracking-tighter text-[#0f172a] leading-none uppercase">{t('العمران', 'AL OUMRANE')}</h1>
-              <span className="text-[9px] font-bold text-[#f97316] uppercase tracking-[0.2em] mt-0.5">{t('مجموعة مدارس', 'Groupe Scolaire')}</span>
+              <h1 className="font-black text-lg lg:text-2xl tracking-tighter text-[#0f172a] leading-none uppercase">{t('العمران', 'AL OUMRANE')}</h1>
+              <span className="text-[8px] lg:text-[9px] font-bold text-[#f97316] uppercase tracking-[0.2em] mt-0.5">{t('مجموعة مدارس', 'Groupe Scolaire')}</span>
             </div>
           </div>
 
@@ -760,9 +760,9 @@ const App: React.FC = () => {
               <button
                 key={item.id}
                 onClick={() => navigateTo(item.href as View)}
-                className="text-5xl font-black text-white hover:text-[#f97316] transition-all text-right rtl:text-right ltr:text-left flex items-center gap-6 group"
+                className="text-3xl sm:text-5xl font-black text-white hover:text-[#f97316] transition-all text-right rtl:text-right ltr:text-left flex items-center gap-6 group"
               >
-                <span className="text-[#f97316] text-lg opacity-30 font-serif italic">0{idx + 1}</span>
+                <span className="text-[#f97316] text-base md:text-lg opacity-30 font-serif italic">0{idx + 1}</span>
                 {t(item.label.ar, item.label.fr)}
               </button>
             ))}
