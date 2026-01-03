@@ -1,8 +1,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-// Fix: Import MessageCircle instead of MessageSquare to match usage in JSX (line 115)
 import { MessageCircle, X, Send, Bot, Loader2, Sparkles, Headphones } from 'lucide-react';
-import { getAIResponse } from '../services/gemini';
+import { getGroqResponse } from '../services/groqService';
 import { Language } from '../types';
 
 interface Props {
@@ -12,11 +11,11 @@ interface Props {
 const AIChatBot: React.FC<Props> = ({ lang }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<{ role: 'bot' | 'user'; text: string }[]>([
-    { 
-      role: 'bot', 
-      text: lang === 'ar' 
-        ? 'مرحباً بكم في العمران. أنا مساعدكم الرقمي، كيف يمكنني إرشادكم اليوم؟' 
-        : 'Bienvenue à Al Omrane. Je suis votre assistant digital, comment puis-je vous guider ?' 
+    {
+      role: 'bot',
+      text: lang === 'ar'
+        ? 'مرحباً بكم في العمران. أنا مساعدكم الرقمي، كيف يمكنني إرشادكم اليوم؟'
+        : 'Bienvenue à Al Omrane. Je suis votre assistant digital, comment puis-je vous guider ?'
     }
   ]);
   const [input, setInput] = useState('');
@@ -37,7 +36,7 @@ const AIChatBot: React.FC<Props> = ({ lang }) => {
     setMessages(prev => [...prev, { role: 'user', text: userMsg }]);
     setIsLoading(true);
 
-    const response = await getAIResponse(userMsg);
+    const response = await getGroqResponse(userMsg, lang);
     setMessages(prev => [...prev, { role: 'bot', text: response || '' }]);
     setIsLoading(false);
   };
@@ -55,8 +54,8 @@ const AIChatBot: React.FC<Props> = ({ lang }) => {
               <div>
                 <h3 className="font-black text-base tracking-tight">{lang === 'ar' ? 'مساعد العمران' : 'Concierge Al Omrane'}</h3>
                 <div className="flex items-center gap-1.5 mt-0.5">
-                   <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                   <p className="text-[10px] opacity-70 uppercase font-bold tracking-widest">{lang === 'ar' ? 'متصل الآن' : 'En ligne'}</p>
+                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                  <p className="text-[10px] opacity-70 uppercase font-bold tracking-widest">{lang === 'ar' ? 'متصل الآن' : 'En ligne'}</p>
                 </div>
               </div>
             </div>
@@ -69,11 +68,10 @@ const AIChatBot: React.FC<Props> = ({ lang }) => {
           <div ref={scrollRef} className="flex-1 overflow-y-auto p-6 space-y-4 bg-slate-50/50">
             {messages.map((m, i) => (
               <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div className={`max-w-[85%] p-4 rounded-2xl text-sm leading-relaxed shadow-sm ${
-                  m.role === 'user' 
-                    ? 'bg-[#1e1b4b] text-white rounded-br-none' 
-                    : 'bg-white text-slate-800 rounded-bl-none border border-slate-100'
-                }`}>
+                <div className={`max-w-[85%] p-4 rounded-2xl text-sm leading-relaxed shadow-sm ${m.role === 'user'
+                  ? 'bg-[#1e1b4b] text-white rounded-br-none'
+                  : 'bg-white text-slate-800 rounded-bl-none border border-slate-100'
+                  }`}>
                   {m.text}
                 </div>
               </div>
@@ -98,7 +96,7 @@ const AIChatBot: React.FC<Props> = ({ lang }) => {
                 placeholder={lang === 'ar' ? 'اكتب استفسارك هنا...' : 'Écrivez votre question...'}
                 className={`w-full p-4 ${lang === 'ar' ? 'pr-5 pl-12' : 'pl-5 pr-12'} rounded-xl bg-slate-50 border border-slate-200 focus:border-[#f97316] outline-none text-sm transition-all`}
               />
-              <button 
+              <button
                 onClick={handleSend}
                 disabled={isLoading}
                 className={`absolute ${lang === 'ar' ? 'left-2' : 'right-2'} top-1/2 -translate-y-1/2 p-3 text-[#1e1b4b] hover:text-[#f97316] transition-colors`}
