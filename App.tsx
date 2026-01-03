@@ -104,7 +104,7 @@ const App: React.FC = () => {
               </div>
             </div>
 
-            <div className="hidden md:block lg:col-span-5 relative">
+            <div className="relative mt-12 lg:mt-0 lg:col-span-5">
               <div className="absolute -top-12 -left-12 bg-white w-36 md:w-52 h-36 md:h-52 rounded-full shadow-luxury z-30 flex flex-col items-center justify-center border-[8px] md:border-[12px] border-orange-50 animate-reveal">
                 <span className="text-4xl md:text-7xl font-black text-[#f97316] leading-none">+25</span>
                 <span className="text-[8px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest mt-1 md:mt-2 text-center px-2 md:px-4">
@@ -708,7 +708,7 @@ const App: React.FC = () => {
       </div>
 
       {/* 2. MAIN NAVBAR */}
-      <nav className={`fixed top-0 md:top-10 w-full z-[100] transition-all duration-700 px-2 md:px-12 py-2 md:py-5 ${isScrolled ? 'translate-y-1' : ''}`}>
+      <nav className={`fixed top-[3.5rem] md:top-10 w-full z-[100] transition-all duration-700 px-2 md:px-12 py-2 md:py-5 ${isScrolled ? 'translate-y-1' : ''}`}>
         <div className={`max-w-[1600px] mx-auto rounded-2xl md:rounded-[2.5rem] px-3 md:px-6 lg:px-10 py-2 md:py-4 flex items-center bg-white/95 backdrop-blur-2xl shadow-lg md:shadow-luxury border border-slate-200/50 ${lang === 'ar' ? 'flex-row' : 'flex-row-reverse'}`}>
 
           {/* Logo & Name Section - Always first in DOM, positioned by flex direction */}
