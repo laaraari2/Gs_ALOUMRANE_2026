@@ -148,13 +148,13 @@ export const TOUR_STATIONS = [
   {
     id: 'library',
     title: { ar: 'المكتبة', fr: 'Bibliothèque' },
-    description: { ar: 'مكتبة عصرية غنية بآلاف الكتب والمراجع العلمية والأدبية مع فضاءات مريحة للقراءة والمطالعة.', fr: 'Bibliothèque moderne riche en milliers de livres et références scientifiques avec des espaces de lecture confortables.' },
+    description: { ar: 'مكتبة عصرية توفر فضاءات للمطالعة، وتستضيف دروس الدعم في الفرنسية بتأطير من أساتذة متخصصين.', fr: 'Bibliothèque moderne offrant des espaces de lecture et des cours de soutien en français encadrés par des professeurs spécialisés.' },
     image: '/images/school_library.png'
   },
   {
     id: 'sports-field',
     title: { ar: 'الملعب', fr: 'Terrain de Sport' },
-    description: { ar: 'ملعب رياضي متعدد الاستخدامات بعشب اصطناعي عالي الجودة لممارسة كرة القدم وألعاب القوى والأنشطة الرياضية.', fr: 'Terrain multisports en gazon synthétique de haute qualité pour le football, l\'athlétisme et les activités sportives.' },
+    description: { ar: 'ملعب رياضي متعدد الاستخدامات عالي الجودة لممارسة كرة القدم وألعاب القوى والأنشطة الرياضية.', fr: 'Terrain multisports de haute qualité pour le football, l\'athlétisme et les activités sportives.' },
     image: '/images/sports_field.png'
   },
   {
@@ -174,5 +174,11 @@ export const TOUR_STATIONS = [
     title: { ar: 'فصل السبورة التفاعلية', fr: 'Classe Interactive' },
     description: { ar: 'فصول ذكية مجهزة بسبورات تفاعلية وتقنيات عرض متطورة لتجربة تعليمية تفاعلية وممتعة.', fr: 'Classes intelligentes équipées de tableaux interactifs et de technologies de projection avancées pour une expérience éducative immersive.' },
     image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=1200'
+  },
+  {
+    id: 'theater',
+    title: { ar: 'المسرح', fr: 'Théâtre' },
+    description: { ar: 'فضاء للإبداع المسرحي حيث قدم التلاميذ مسرحية "الأمير الصغير" السنة الماضية، ويستعدون لعرض "أنتيجون" لجان أنوي هذا العام في إطار المسرح المندمج.', fr: 'Espace de création où les élèves ont présenté "Le Petit Prince" l\'an dernier, et préparent "Antigone" de Jean Anouilh cette année dans le cadre du théâtre intégré.' },
+    image: './images/theatre.png'
   }
 ];
