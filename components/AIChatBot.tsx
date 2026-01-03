@@ -42,25 +42,25 @@ const AIChatBot: React.FC<Props> = ({ lang }) => {
   };
 
   return (
-    <div className={`fixed bottom-4 sm:bottom-10 ${lang === 'ar' ? 'left-4 sm:left-10' : 'right-4 sm:right-10'} z-[60]`}>
+    <div className={`fixed bottom-6 sm:bottom-10 ${lang === 'ar' ? 'left-6 sm:left-10' : 'right-6 sm:right-10'} z-[250]`}>
       {isOpen ? (
-        <div className="w-[calc(100vw-2rem)] sm:w-[440px] h-[calc(100vh-12rem)] max-h-[600px] sm:h-[600px] bg-white rounded-[2rem] sm:rounded-[2.5rem] shadow-2xl flex flex-col border border-slate-100 overflow-hidden animate-in fade-in slide-in-from-bottom-10 duration-500">
+        <div className="fixed inset-0 sm:absolute sm:inset-auto sm:bottom-0 sm:right-0 w-full h-full sm:w-[440px] sm:h-[600px] bg-white sm:rounded-[2.5rem] shadow-2xl flex flex-col border border-slate-100 overflow-hidden animate-in fade-in slide-in-from-bottom-10 duration-500">
           {/* Header - Concierge Style */}
-          <div className="bg-[#1e1b4b] p-4 sm:p-6 text-white flex justify-between items-center relative">
+          <div className="bg-[#1e1b4b] p-4 sm:p-6 text-white flex justify-between items-center relative shrink-0">
             <div className="flex items-center gap-4 relative z-10">
-              <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center backdrop-blur-md">
-                <Headphones size={24} className="text-[#f97316]" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/10 flex items-center justify-center backdrop-blur-md">
+                <Headphones size={20} className="text-[#f97316] sm:size-[24px]" />
               </div>
               <div>
-                <h3 className="font-black text-base tracking-tight">{lang === 'ar' ? 'مساعد العمران' : 'Concierge Al Omrane'}</h3>
+                <h3 className="font-black text-sm sm:text-base tracking-tight">{lang === 'ar' ? 'مساعد العمران' : 'Concierge Al Omrane'}</h3>
                 <div className="flex items-center gap-1.5 mt-0.5">
                   <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                  <p className="text-[10px] opacity-70 uppercase font-bold tracking-widest">{lang === 'ar' ? 'متصل الآن' : 'En ligne'}</p>
+                  <p className="text-[9px] sm:text-[10px] opacity-70 uppercase font-bold tracking-widest">{lang === 'ar' ? 'متصل الآن' : 'En ligne'}</p>
                 </div>
               </div>
             </div>
             <button onClick={() => setIsOpen(false)} className="hover:bg-white/10 p-2 rounded-xl transition-colors">
-              <X size={20} />
+              <X size={24} />
             </button>
           </div>
 
@@ -86,7 +86,7 @@ const AIChatBot: React.FC<Props> = ({ lang }) => {
           </div>
 
           {/* Input */}
-          <div className="p-4 sm:p-6 border-t border-slate-100 bg-white">
+          <div className="p-4 sm:p-6 border-t border-slate-100 bg-white shadow-lg sm:shadow-none pb-8 sm:pb-6">
             <div className="relative">
               <input
                 type="text"

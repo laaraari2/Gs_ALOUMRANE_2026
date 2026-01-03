@@ -69,26 +69,26 @@ const App: React.FC = () => {
   // --- View Components ---
   const HomeView = () => (
     <div className="animate-reveal">
-      <section className="relative min-h-[90vh] flex items-center pt-32 lg:pt-44 overflow-hidden">
+      <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center pt-20 md:pt-32 lg:pt-44 overflow-hidden">
         <Orbs />
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-7 space-y-12">
-              <div className="inline-flex items-center gap-3 px-6 py-2.5 bg-white/80 backdrop-blur-xl rounded-full border border-slate-200 text-[#0f172a] text-[11px] font-black uppercase tracking-[0.2em] shadow-sm">
+            <div className="lg:col-span-7 space-y-6 md:space-y-12">
+              <div className="inline-flex items-center gap-2 md:gap-3 px-3 md:px-6 py-1.5 md:py-2.5 bg-white/80 backdrop-blur-xl rounded-full border border-slate-200 text-[#0f172a] text-[9px] md:text-[11px] font-black uppercase tracking-[0.1em] md:tracking-[0.2em] shadow-sm">
                 <div className="w-2 h-2 bg-[#f97316] rounded-full animate-ping" />
                 {t('الريادة في التعليم الخاص بالدار البيضاء', 'Leader de l\'Enseignement Privé à Casablanca')}
               </div>
-              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[105px] font-black leading-[1.1] lg:leading-[0.9] tracking-tighter text-[#0f172a]">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-[105px] font-black leading-[1.15] md:leading-[1.1] lg:leading-[0.9] tracking-tighter text-[#0f172a]">
                 {t('مستقبلهم ', 'Leur Futur ')}<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f97316] to-[#ea580c]">{t('يبدأ من هنا', 'Commence Ici')}</span>
               </h1>
-              <p className="text-lg md:text-2xl text-slate-500 max-w-xl leading-relaxed font-medium">
+              <p className="text-sm md:text-lg lg:text-2xl text-slate-500 max-w-xl leading-relaxed font-medium">
                 {t('نحن لا نقدم مجرد دروس، بل نصمم تجربة تعليمية فريدة تهدف لبناء قادة الغد بمهارات عالمية وقيم أصيلة.', 'Bien plus qu\'une école, nous forgeons les leaders de demain avec une excellence académique et des valeurs fortes.')}
               </p>
-              <div className="flex flex-wrap gap-6 pt-6">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-6 pt-4 md:pt-6">
                 <button
                   onClick={() => navigateTo('admissions')}
-                  className="group bg-[#0f172a] text-white px-8 md:px-12 py-4 md:py-6 rounded-2xl md:rounded-[2rem] font-black text-lg md:text-xl shadow-luxury hover:scale-105 active:scale-95 transition-all flex items-center gap-4 overflow-hidden relative"
+                  className="group bg-[#0f172a] text-white px-6 md:px-8 lg:px-12 py-3 md:py-4 lg:py-6 rounded-xl md:rounded-2xl lg:rounded-[2rem] font-black text-base md:text-lg lg:text-xl shadow-luxury hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-3 md:gap-4 overflow-hidden relative w-full sm:w-auto"
                 >
                   <span className="relative z-10">{t('سجل الآن', 'S\'inscrire')}</span>
                   <ArrowUpRight size={22} className="relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -96,7 +96,7 @@ const App: React.FC = () => {
                 </button>
                 <button
                   onClick={() => setIsTourOpen(true)}
-                  className="px-8 md:px-12 py-4 md:py-6 rounded-2xl md:rounded-[2rem] font-black text-lg md:text-xl border-2 border-slate-200 bg-white/50 backdrop-blur-md hover:bg-slate-50 transition-all flex items-center gap-4 group"
+                  className="px-6 md:px-8 lg:px-12 py-3 md:py-4 lg:py-6 rounded-xl md:rounded-2xl lg:rounded-[2rem] font-black text-base md:text-lg lg:text-xl border-2 border-slate-200 bg-white/50 backdrop-blur-md hover:bg-slate-50 transition-all flex items-center justify-center gap-3 md:gap-4 group w-full sm:w-auto"
                 >
                   {t('جولة افتراضية', 'Tour Virtuel')}
                   <Play size={20} className="text-[#f97316] group-hover:scale-125 transition-transform" fill="currentColor" />
@@ -104,28 +104,29 @@ const App: React.FC = () => {
               </div>
             </div>
 
-            <div className="lg:col-span-5 relative">
-              <div className="absolute -top-12 -left-12 bg-white w-52 h-52 rounded-full shadow-luxury z-30 flex flex-col items-center justify-center border-[12px] border-orange-50 animate-reveal">
-                <span className="text-7xl font-black text-[#f97316] leading-none">+25</span>
-                <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-2 text-center px-4">
+            <div className="hidden md:block lg:col-span-5 relative">
+              <div className="absolute -top-12 -left-12 bg-white w-36 md:w-52 h-36 md:h-52 rounded-full shadow-luxury z-30 flex flex-col items-center justify-center border-[8px] md:border-[12px] border-orange-50 animate-reveal">
+                <span className="text-4xl md:text-7xl font-black text-[#f97316] leading-none">+25</span>
+                <span className="text-[8px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest mt-1 md:mt-2 text-center px-2 md:px-4">
                   {t('سنة من التميز الأكاديمي', 'Ans d\'Excellence')}
                 </span>
                 <div className="absolute -inset-1 rounded-full border-2 border-dashed border-[#f97316]/20 animate-[spin_10s_linear_infinite]" />
               </div>
 
-              <div className="relative z-10 rounded-[6rem] overflow-hidden shadow-luxury border-[15px] border-white aspect-[4/5] animate-floating">
+              <div className="relative z-10 rounded-[3rem] md:rounded-[6rem] overflow-hidden shadow-luxury border-[8px] md:border-[15px] border-white aspect-[4/5] animate-floating">
                 <img src="/images/gsAloumrane.png" className="w-full h-full object-cover" alt={t('مجموعة مدارس العمران', 'Groupe Scolaire Al Oumrane')} />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/40 to-transparent" />
               </div>
 
-              <div className="absolute -bottom-10 -right-10 bg-[#0f172a] p-10 rounded-[3.5rem] shadow-luxury z-20 border border-white/10 animate-reveal delay-500">
-                <div className="flex items-center gap-4 mb-3">
-                  <div className="w-12 h-12 bg-[#f97316] rounded-xl flex items-center justify-center text-white">
-                    <Trophy size={24} />
+              <div className="absolute -bottom-6 md:-bottom-10 -right-6 md:-right-10 bg-[#0f172a] p-5 md:p-10 rounded-[2rem] md:rounded-[3.5rem] shadow-luxury z-20 border border-white/10 animate-reveal delay-500">
+                <div className="flex items-center gap-2 md:gap-4 mb-2 md:mb-3">
+                  <div className="w-8 md:w-12 h-8 md:h-12 bg-[#f97316] rounded-lg md:rounded-xl flex items-center justify-center text-white">
+                    <Trophy size={18} className="md:hidden" />
+                    <Trophy size={24} className="hidden md:block" />
                   </div>
-                  <span className="text-4xl font-black text-white">100%</span>
+                  <span className="text-2xl md:text-4xl font-black text-white">100%</span>
                 </div>
-                <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">{t('نسبة النجاح في الباكالوريا', 'Réussite au BAC')}</p>
+                <p className="text-[8px] md:text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] md:tracking-[0.2em]">{t('نسبة النجاح في الباكالوريا', 'Réussite au BAC')}</p>
               </div>
             </div>
           </div>
@@ -133,32 +134,33 @@ const App: React.FC = () => {
       </section>
 
       {/* LUXURY STATS SECTION */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="bg-[#0f172a] rounded-[4rem] p-12 lg:p-20 shadow-luxury relative overflow-hidden group">
+      <section className="py-12 md:py-24 relative overflow-hidden">
+        <div className="container mx-auto px-4 md:px-6 lg:px-12">
+          <div className="bg-[#0f172a] rounded-[2rem] md:rounded-[4rem] p-6 md:p-12 lg:p-20 shadow-luxury relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#f97316]/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2" />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 lg:gap-8 relative z-10">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12 lg:gap-8 relative z-10">
               {[
                 { label: { ar: 'تلميذ شغوف', fr: 'Élèves Passionnés' }, val: '1200+', icon: <Users size={32} /> },
                 { label: { ar: 'أستاذ خبير', fr: 'Corps Enseignant' }, val: '150+', icon: <UserCheck size={32} /> },
                 { label: { ar: 'سنة من العطاء', fr: 'Années d\'Expérience' }, val: '25+', icon: <History size={32} /> },
                 { label: { ar: 'شريك استراتيجي', fr: 'Partenaires' }, val: '12', icon: <Globe size={32} /> },
               ].map((stat, i) => (
-                <div key={i} className="flex flex-col items-center lg:items-start text-center lg:text-right rtl:lg:text-right ltr:lg:text-left group/stat">
-                  <div className="mb-8 relative">
-                    <div className="w-20 h-20 bg-white/5 rounded-[2rem] border border-white/10 flex items-center justify-center text-[#f97316] group-hover/stat:bg-[#f97316] group-hover/stat:text-white group-hover/stat:-translate-y-2 transition-all duration-500">
-                      {stat.icon}
+                <div key={i} className="flex flex-col items-center text-center group/stat">
+                  <div className="mb-4 md:mb-8 relative">
+                    <div className="w-12 h-12 md:w-20 md:h-20 bg-white/5 rounded-xl md:rounded-[2rem] border border-white/10 flex items-center justify-center text-[#f97316] group-hover/stat:bg-[#f97316] group-hover/stat:text-white group-hover/stat:-translate-y-2 transition-all duration-500">
+                      <Users size={20} className="md:hidden" />
+                      <span className="hidden md:block">{stat.icon}</span>
                     </div>
                     <div className="absolute -top-1 -right-1 w-3 h-3 bg-[#f97316] rounded-full opacity-0 group-hover/stat:opacity-100 transition-opacity" />
                   </div>
 
-                  <div className="space-y-2">
-                    <h4 className="text-5xl lg:text-6xl font-black text-white tracking-tighter flex items-center gap-1">
+                  <div className="space-y-1 md:space-y-2">
+                    <h4 className="text-2xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter flex items-center justify-center gap-1">
                       {stat.val}
                     </h4>
-                    <p className="text-[11px] font-black text-[#f97316] uppercase tracking-[0.3em] leading-relaxed">
+                    <p className="text-[9px] md:text-[11px] font-black text-[#f97316] uppercase tracking-[0.2em] md:tracking-[0.3em] leading-relaxed">
                       {t(stat.label.ar, stat.label.fr)}
                     </p>
                   </div>
@@ -171,7 +173,7 @@ const App: React.FC = () => {
       </section>
 
       {/* ULTRA-PREMIUM TESTIMONIALS SECTION */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      <section className="py-12 md:py-20 bg-white relative overflow-hidden">
         {/* Abstract Background Orbs */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-[20%] right-0 w-[40%] h-[60%] bg-orange-50/60 rounded-full blur-[120px]" />
@@ -179,21 +181,21 @@ const App: React.FC = () => {
         </div>
 
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
-          <div className="flex flex-col items-center text-center mb-12">
-            <div className="inline-flex items-center gap-3 px-6 py-2 bg-orange-50 rounded-full border border-orange-100 mb-6 animate-reveal">
-              <Sparkles size={16} className="text-[#f97316]" />
-              <span className="text-[#f97316] font-black uppercase tracking-[0.4em] text-[10px]">{t('قصص نجاحنا', 'NOS SUCCÈS')}</span>
+          <div className="flex flex-col items-center text-center mb-8 md:mb-12">
+            <div className="inline-flex items-center gap-2 md:gap-3 px-4 md:px-6 py-1.5 md:py-2 bg-orange-50 rounded-full border border-orange-100 mb-4 md:mb-6 animate-reveal">
+              <Sparkles size={14} className="text-[#f97316]" />
+              <span className="text-[#f97316] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[9px] md:text-[10px]">{t('قصص نجاحنا', 'NOS SUCCÈS')}</span>
             </div>
 
             {/* MAGNIFICENT SINGLE-LINE TITLE - FIXED RESPONSIVE SIZE */}
             <div className="relative group w-full text-center overflow-visible">
-              <h2 className="text-3xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter text-[#0f172a] md:whitespace-nowrap animate-reveal delay-100 leading-none">
+              <h2 className="text-2xl md:text-5xl lg:text-7xl xl:text-8xl font-black tracking-tighter text-[#0f172a] md:whitespace-nowrap animate-reveal delay-100 leading-tight md:leading-none">
                 {t('قالوا عن العمران', 'ILS ONT DIT SUR AL OUMRANE')}
               </h2>
               <div className="h-1.5 w-24 group-hover:w-48 bg-gradient-to-r from-[#f97316] to-[#ea580c] transition-all duration-1000 mx-auto rounded-full mt-8" />
             </div>
 
-            <p className="text-2xl text-slate-400 font-medium max-w-3xl mt-12 animate-reveal delay-200">
+            <p className="text-base md:text-xl lg:text-2xl text-slate-400 font-medium max-w-3xl mt-6 md:mt-12 animate-reveal delay-200">
               {t('ثقة تعكس التزامنا بجعل كل تلميذ قصة نجاح ملهمة وجزءاً من عائلة العمران الكبيرة.', 'Une confiance qui témoigne de notre engagement à faire de chaque élève un futur leader.')}
             </p>
           </div>
@@ -202,7 +204,7 @@ const App: React.FC = () => {
             {TESTIMONIALS.slice(0, 4).map((testi, idx) => (
               <div
                 key={testi.id}
-                className={`group relative bg-gradient-to-br from-white to-slate-50 rounded-[2.5rem] p-8 shadow-lg border border-slate-100 transition-all duration-500 hover:-translate-y-4 hover:shadow-2xl overflow-hidden ${idx % 2 !== 0 ? 'lg:mt-12' : ''}`}
+                className={`group relative bg-gradient-to-br from-white to-slate-50 rounded-2xl md:rounded-[2.5rem] p-5 md:p-8 shadow-lg border border-slate-100 transition-all duration-500 hover:-translate-y-4 hover:shadow-2xl overflow-hidden ${idx % 2 !== 0 ? 'lg:mt-12' : ''}`}
               >
                 {/* Background Decoration */}
                 <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#f97316]/10 to-transparent rounded-bl-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -250,10 +252,10 @@ const App: React.FC = () => {
             ))}
           </div>
 
-          <div className="mt-12 text-center animate-reveal delay-500">
+          <div className="mt-8 md:mt-12 text-center animate-reveal delay-500">
             <button
               onClick={() => navigateTo('admissions')}
-              className="px-16 py-8 bg-[#0f172a] text-white rounded-[2.5rem] font-black text-2xl shadow-luxury hover:scale-105 active:scale-95 transition-all flex items-center gap-6 mx-auto group overflow-hidden relative"
+              className="px-8 md:px-16 py-4 md:py-8 bg-[#0f172a] text-white rounded-2xl md:rounded-[2.5rem] font-black text-base md:text-2xl shadow-luxury hover:scale-105 active:scale-95 transition-all flex items-center gap-3 md:gap-6 mx-auto group overflow-hidden relative"
             >
               <span className="relative z-10">{t('سجل ابنك معنا اليوم', 'Inscrivez votre enfant')}</span>
               <ArrowUpRight size={28} className="relative z-10 group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500" />
@@ -264,22 +266,23 @@ const App: React.FC = () => {
       </section>
 
       {/* Advantages */}
-      <section className="py-16 relative bg-slate-50/50">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="text-[#f97316] font-black uppercase tracking-[0.4em] text-xs">{t('لماذا تختارنا؟', 'Nos Atouts')}</span>
-            <h2 className="text-5xl lg:text-6xl font-black text-[#0f172a] mt-6 tracking-tighter leading-tight">
+      <section className="py-10 md:py-16 relative bg-slate-50/50">
+        <div className="container mx-auto px-4 md:px-6 lg:px-12">
+          <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
+            <span className="text-[#f97316] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-xs">{t('لماذا تختارنا؟', 'Nos Atouts')}</span>
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-[#0f172a] mt-4 md:mt-6 tracking-tighter leading-tight">
               {t('بيئة تعليمية ذكية تلهم الجيل القادم', 'Une Éducation Pensée pour l\'Avenir')}
             </h2>
           </div>
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             {ADVANTAGES.map(adv => (
-              <div key={adv.id} className="bg-white p-12 rounded-[4rem] group hover:-translate-y-4 transition-all duration-500 border border-slate-100 shadow-sm hover:shadow-luxury">
-                <div className="w-20 h-20 bg-[#0f172a] rounded-3xl flex items-center justify-center text-[#f97316] mb-10 group-hover:rotate-6 transition-transform">
-                  {adv.id === 1 ? <Cpu size={36} /> : adv.id === 2 ? <Languages size={36} /> : <Lightbulb size={36} />}
+              <div key={adv.id} className="bg-white p-6 md:p-12 rounded-2xl md:rounded-[4rem] group hover:-translate-y-2 md:hover:-translate-y-4 transition-all duration-500 border border-slate-100 shadow-sm hover:shadow-luxury">
+                <div className="w-12 md:w-20 h-12 md:h-20 bg-[#0f172a] rounded-xl md:rounded-3xl flex items-center justify-center text-[#f97316] mb-4 md:mb-10 group-hover:rotate-6 transition-transform">
+                  {adv.id === 1 ? <Cpu size={24} className="md:hidden" /> : adv.id === 2 ? <Languages size={24} className="md:hidden" /> : <Lightbulb size={24} className="md:hidden" />}
+                  {adv.id === 1 ? <Cpu size={36} className="hidden md:block" /> : adv.id === 2 ? <Languages size={36} className="hidden md:block" /> : <Lightbulb size={36} className="hidden md:block" />}
                 </div>
-                <h3 className="text-3xl font-black mb-6 tracking-tight text-[#0f172a]">{t(adv.title.ar, adv.title.fr)}</h3>
-                <p className="text-slate-500 font-medium leading-relaxed text-lg">{t(adv.desc.ar, adv.desc.fr)}</p>
+                <h3 className="text-xl md:text-3xl font-black mb-3 md:mb-6 tracking-tight text-[#0f172a]">{t(adv.title.ar, adv.title.fr)}</h3>
+                <p className="text-slate-500 font-medium leading-relaxed text-sm md:text-lg">{t(adv.desc.ar, adv.desc.fr)}</p>
               </div>
             ))}
           </div>
@@ -287,12 +290,13 @@ const App: React.FC = () => {
       </section>
 
       {/* MARQUEE ANNOUNCEMENT BAR */}
-      <section className="py-6 bg-[#f97316] overflow-hidden">
+      <section className="py-4 md:py-6 bg-[#f97316] overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap">
           {[1, 2, 3].map((_, i) => (
-            <div key={i} className="flex items-center gap-16 mx-8">
-              <span className="text-white font-black text-lg flex items-center gap-3">
-                <Sparkles size={20} />
+            <div key={i} className="flex items-center gap-8 md:gap-16 mx-4 md:mx-8">
+              <span className="text-white font-black text-sm md:text-lg flex items-center gap-2 md:gap-3">
+                <Sparkles size={16} className="md:hidden" />
+                <Sparkles size={20} className="hidden md:block" />
                 {t('التسجيلات مفتوحة للموسم الدراسي 2025-2026', 'Inscriptions ouvertes pour 2025-2026')}
               </span>
               <span className="text-white/80">•</span>
@@ -312,18 +316,18 @@ const App: React.FC = () => {
       </section>
 
       {/* NEWS & EVENTS SECTION */}
-      <section className="py-16 bg-white relative overflow-hidden">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-3 px-6 py-2 bg-orange-50 rounded-full border border-orange-100 mb-8">
-              <Newspaper size={16} className="text-[#f97316]" />
-              <span className="text-[#f97316] font-black uppercase tracking-[0.4em] text-[10px]">{t('أخبار وفعاليات', 'ACTUALITÉS')}</span>
+      <section className="py-10 md:py-16 bg-white relative overflow-hidden">
+        <div className="container mx-auto px-4 md:px-6 lg:px-12">
+          <div className="text-center mb-6 md:mb-10">
+            <div className="inline-flex items-center gap-2 md:gap-3 px-4 md:px-6 py-1.5 md:py-2 bg-orange-50 rounded-full border border-orange-100 mb-4 md:mb-8">
+              <Newspaper size={14} className="text-[#f97316]" />
+              <span className="text-[#f97316] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[9px] md:text-[10px]">{t('أخبار وفعاليات', 'ACTUALITÉS')}</span>
             </div>
-            <h2 className="text-5xl lg:text-6xl font-black text-[#0f172a] tracking-tighter">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-[#0f172a] tracking-tighter">
               {t('آخر أخبار المدرسة', 'Dernières Nouvelles')}
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             {[
               {
                 title: { ar: 'انطلاق التسجيلات للموسم الجديد', fr: 'Ouverture des Inscriptions' },
@@ -335,7 +339,7 @@ const App: React.FC = () => {
                 title: { ar: 'حفل تكريم المتفوقين', fr: 'Cérémonie d\'Excellence' },
                 date: { ar: '20 ديسمبر 2024', fr: '20 Décembre 2024' },
                 desc: { ar: 'احتفالية لتكريم التلاميذ المتفوقين في مختلف المستويات الدراسية.', fr: 'Célébration des élèves excellents de tous les niveaux.' },
-                img: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=600'
+                img: '/images/excellence_ceremony.png'
               },
               {
                 title: { ar: 'ورشة الروبوتيك والذكاء الاصطناعي', fr: 'Atelier Robotique & IA' },
@@ -344,17 +348,18 @@ const App: React.FC = () => {
                 img: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=600'
               }
             ].map((news, idx) => (
-              <div key={idx} className="group bg-white rounded-[3rem] overflow-hidden shadow-sm border border-slate-100 hover:shadow-luxury transition-all duration-500 hover:-translate-y-4">
-                <div className="h-56 overflow-hidden">
+              <div key={idx} className="group bg-white rounded-2xl md:rounded-[3rem] overflow-hidden shadow-sm border border-slate-100 hover:shadow-luxury transition-all duration-500 hover:-translate-y-2 md:hover:-translate-y-4">
+                <div className="h-40 md:h-56 overflow-hidden">
                   <img src={news.img} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={t(news.title.ar, news.title.fr)} />
                 </div>
-                <div className="p-8">
-                  <div className="flex items-center gap-2 text-[#f97316] mb-4">
-                    <Calendar size={14} />
-                    <span className="text-xs font-bold">{t(news.date.ar, news.date.fr)}</span>
+                <div className="p-4 md:p-8">
+                  <div className="flex items-center gap-2 text-[#f97316] mb-2 md:mb-4">
+                    <Calendar size={12} className="md:hidden" />
+                    <Calendar size={14} className="hidden md:block" />
+                    <span className="text-[10px] md:text-xs font-bold">{t(news.date.ar, news.date.fr)}</span>
                   </div>
-                  <h3 className="text-2xl font-black text-[#0f172a] mb-4 tracking-tight">{t(news.title.ar, news.title.fr)}</h3>
-                  <p className="text-slate-500 font-medium leading-relaxed">{t(news.desc.ar, news.desc.fr)}</p>
+                  <h3 className="text-lg md:text-2xl font-black text-[#0f172a] mb-2 md:mb-4 tracking-tight">{t(news.title.ar, news.title.fr)}</h3>
+                  <p className="text-slate-500 font-medium leading-relaxed text-sm md:text-base">{t(news.desc.ar, news.desc.fr)}</p>
                 </div>
               </div>
             ))}
@@ -363,21 +368,21 @@ const App: React.FC = () => {
       </section>
 
       {/* TEAM SECTION */}
-      <section className="py-16 bg-slate-50/50 relative overflow-hidden">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-3 px-6 py-2 bg-orange-50 rounded-full border border-orange-100 mb-8">
-              <Users2 size={16} className="text-[#f97316]" />
-              <span className="text-[#f97316] font-black uppercase tracking-[0.4em] text-[10px]">{t('فريقنا', 'NOTRE ÉQUIPE')}</span>
+      <section className="py-10 md:py-16 bg-slate-50/50 relative overflow-hidden">
+        <div className="container mx-auto px-4 md:px-6 lg:px-12">
+          <div className="text-center mb-6 md:mb-10">
+            <div className="inline-flex items-center gap-2 md:gap-3 px-4 md:px-6 py-1.5 md:py-2 bg-orange-50 rounded-full border border-orange-100 mb-4 md:mb-8">
+              <Users2 size={14} className="text-[#f97316]" />
+              <span className="text-[#f97316] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[9px] md:text-[10px]">{t('فريقنا', 'NOTRE ÉQUIPE')}</span>
             </div>
-            <h2 className="text-5xl lg:text-6xl font-black text-[#0f172a] tracking-tighter">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-[#0f172a] tracking-tighter">
               {t('الفريق التربوي', 'L\'Équipe Pédagogique')}
             </h2>
-            <p className="text-xl text-slate-500 mt-6 max-w-2xl mx-auto font-medium">
+            <p className="text-sm md:text-xl text-slate-500 mt-4 md:mt-6 max-w-2xl mx-auto font-medium">
               {t('نخبة من الأساتذة المؤهلين والمتفانين في تقديم أفضل تعليم لأبنائكم', 'Une équipe d\'enseignants qualifiés et dévoués à l\'excellence de vos enfants')}
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {[
               { name: { ar: 'أ. محمد العلوي', fr: 'M. Mohamed Alaoui' }, role: { ar: 'مدير المؤسسة', fr: 'Directeur' }, img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400' },
               { name: { ar: 'أ. فاطمة الزهراء', fr: 'Mme. Fatima Zahra' }, role: { ar: 'مسؤولة السلك الابتدائي', fr: 'Resp. Primaire' }, img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400' },
@@ -385,12 +390,12 @@ const App: React.FC = () => {
               { name: { ar: 'أ. سناء المنصوري', fr: 'Mme. Sanaa Mansouri' }, role: { ar: 'أستاذة اللغات', fr: 'Prof. Langues' }, img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=400' }
             ].map((member, idx) => (
               <div key={idx} className="group text-center">
-                <div className="relative w-48 h-48 mx-auto mb-8 rounded-[3rem] overflow-hidden shadow-luxury group-hover:-translate-y-4 transition-all duration-500">
+                <div className="relative w-24 h-24 md:w-48 md:h-48 mx-auto mb-3 md:mb-8 rounded-2xl md:rounded-[3rem] overflow-hidden shadow-md md:shadow-luxury group-hover:-translate-y-2 md:group-hover:-translate-y-4 transition-all duration-500">
                   <img src={member.img} className="w-full h-full object-cover" alt={t(member.name.ar, member.name.fr)} />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
-                <h3 className="text-xl font-black text-[#0f172a] mb-2">{t(member.name.ar, member.name.fr)}</h3>
-                <p className="text-[#f97316] font-bold text-sm uppercase tracking-wider">{t(member.role.ar, member.role.fr)}</p>
+                <h3 className="text-sm md:text-xl font-black text-[#0f172a] mb-1 md:mb-2">{t(member.name.ar, member.name.fr)}</h3>
+                <p className="text-[#f97316] font-bold text-[10px] md:text-sm uppercase tracking-wider">{t(member.role.ar, member.role.fr)}</p>
               </div>
             ))}
           </div>
@@ -398,18 +403,18 @@ const App: React.FC = () => {
       </section>
 
       {/* FAQ SECTION */}
-      <section className="py-16 bg-white relative overflow-hidden">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-3 px-6 py-2 bg-orange-50 rounded-full border border-orange-100 mb-8">
-              <HelpCircle size={16} className="text-[#f97316]" />
-              <span className="text-[#f97316] font-black uppercase tracking-[0.4em] text-[10px]">{t('أسئلة شائعة', 'FAQ')}</span>
+      <section className="py-10 md:py-16 bg-white relative overflow-hidden">
+        <div className="container mx-auto px-4 md:px-6 lg:px-12">
+          <div className="text-center mb-6 md:mb-10">
+            <div className="inline-flex items-center gap-2 md:gap-3 px-4 md:px-6 py-1.5 md:py-2 bg-orange-50 rounded-full border border-orange-100 mb-4 md:mb-8">
+              <HelpCircle size={14} className="text-[#f97316]" />
+              <span className="text-[#f97316] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[9px] md:text-[10px]">{t('أسئلة شائعة', 'FAQ')}</span>
             </div>
-            <h2 className="text-5xl lg:text-6xl font-black text-[#0f172a] tracking-tighter">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-[#0f172a] tracking-tighter">
               {t('الأسئلة الأكثر تكراراً', 'Questions Fréquentes')}
             </h2>
           </div>
-          <div className="max-w-3xl mx-auto space-y-4">
+          <div className="max-w-3xl mx-auto space-y-3 md:space-y-4">
             {[
               {
                 q: { ar: 'ما هي مواعيد التسجيل؟', fr: 'Quelles sont les dates d\'inscription ?' },
@@ -424,7 +429,7 @@ const App: React.FC = () => {
                 a: { ar: 'نعم، نوفر خدمة النقل المدرسي الآمن لجميع أحياء الدار البيضاء مع مرافقين متخصصين.', fr: 'Oui, nous offrons un transport scolaire sécurisé pour tous les quartiers de Casablanca.' }
               },
               {
-                q: { ar: 'ما هي اللغات المُدرَّسة؟', fr: 'Quelles langues sont enseignées ?' },
+                q: { ar: 'ما هي اللغات المُدرَسة؟', fr: 'Quelles langues sont enseignées ?' },
                 a: { ar: 'العربية، الفرنسية، الإنجليزية، والإسبانية كلغة اختيارية في الثانوي.', fr: 'Arabe, Français, Anglais, et Espagnol en option au secondaire.' }
               },
               {
@@ -432,12 +437,12 @@ const App: React.FC = () => {
                 a: { ar: 'نعم، نوفر أندية متنوعة: الروبوتيك، الفنون، الموسيقى، الرياضة، والمسرح.', fr: 'Oui: Robotique, Arts, Musique, Sports, et Théâtre.' }
               }
             ].map((faq, idx) => (
-              <details key={idx} className="group bg-slate-50 rounded-[2rem] overflow-hidden border border-slate-100">
-                <summary className="flex items-center justify-between p-8 cursor-pointer list-none font-black text-xl text-[#0f172a] hover:text-[#f97316] transition-colors">
+              <details key={idx} className="group bg-slate-50 rounded-xl md:rounded-[2rem] overflow-hidden border border-slate-100">
+                <summary className="flex items-center justify-between p-4 md:p-8 cursor-pointer list-none font-black text-sm md:text-xl text-[#0f172a] hover:text-[#f97316] transition-colors">
                   {t(faq.q.ar, faq.q.fr)}
-                  <ChevronDown size={24} className="text-[#f97316] group-open:rotate-180 transition-transform" />
+                  <ChevronDown size={20} className="text-[#f97316] group-open:rotate-180 transition-transform flex-shrink-0 ml-2" />
                 </summary>
-                <div className="px-8 pb-8 text-slate-500 font-medium leading-relaxed text-lg">
+                <div className="px-4 md:px-8 pb-4 md:pb-8 text-slate-500 font-medium leading-relaxed text-sm md:text-lg">
                   {t(faq.a.ar, faq.a.fr)}
                 </div>
               </details>
@@ -662,7 +667,7 @@ const App: React.FC = () => {
     <div className={`min-h-screen selection:bg-[#f97316] selection:text-white ${lang === 'ar' ? 'rtl-layout' : 'ltr-layout'}`}>
 
       {/* 1. TOP BAR */}
-      <div className="fixed top-0 w-full z-[110] bg-[#0f172a] text-white py-3 px-6 lg:px-16 border-b border-white/5">
+      <div className="hidden md:block fixed top-0 w-full z-[110] bg-[#0f172a] text-white py-2 px-4 lg:px-16 border-b border-white/5">
         <div className="max-w-[1600px] mx-auto flex justify-between items-center">
           {/* Left Side - Phone */}
           <div className="flex items-center gap-8">
@@ -699,15 +704,15 @@ const App: React.FC = () => {
       </div>
 
       {/* 2. MAIN NAVBAR */}
-      <nav className={`fixed top-14 w-full z-[100] transition-all duration-700 px-4 md:px-12 py-5 ${isScrolled ? 'translate-y-1' : ''}`}>
-        <div className={`max-w-[1600px] mx-auto rounded-[2.5rem] px-6 lg:px-10 py-4 flex items-center bg-white/95 backdrop-blur-2xl shadow-luxury border border-slate-200/50 ${lang === 'ar' ? 'flex-row' : 'flex-row-reverse'}`}>
+      <nav className={`fixed top-0 md:top-10 w-full z-[100] transition-all duration-700 px-2 md:px-12 py-2 md:py-5 ${isScrolled ? 'translate-y-1' : ''}`}>
+        <div className={`max-w-[1600px] mx-auto rounded-2xl md:rounded-[2.5rem] px-3 md:px-6 lg:px-10 py-2 md:py-4 flex items-center bg-white/95 backdrop-blur-2xl shadow-lg md:shadow-luxury border border-slate-200/50 ${lang === 'ar' ? 'flex-row' : 'flex-row-reverse'}`}>
 
           {/* Logo & Name Section - Always first in DOM, positioned by flex direction */}
-          <div className={`flex items-center gap-3 lg:gap-4 cursor-pointer ${lang === 'ar' ? 'flex-row-reverse' : 'flex-row'}`} onClick={() => navigateTo('home')}>
-            <img src="/images/logo.png" alt={t('شعار مجموعة مدارس العمران', 'Logo Al Oumrane')} className="w-10 h-10 lg:w-14 lg:h-14 rounded-xl lg:rounded-2xl object-contain shadow-lg" />
+          <div className={`flex items-center gap-2 md:gap-3 lg:gap-4 cursor-pointer ${lang === 'ar' ? 'flex-row-reverse' : 'flex-row'}`} onClick={() => navigateTo('home')}>
+            <img src="/images/logo.png" alt={t('شعار مجموعة مدارس العمران', 'Logo Al Oumrane')} className="w-8 h-8 md:w-10 md:h-10 lg:w-14 lg:h-14 rounded-lg md:rounded-xl lg:rounded-2xl object-contain shadow-md md:shadow-lg" />
             <div className={`flex flex-col ${lang === 'ar' ? 'text-right' : 'text-left'}`}>
-              <h1 className="font-black text-lg lg:text-2xl tracking-tighter text-[#0f172a] leading-none uppercase">{t('العمران', 'AL OUMRANE')}</h1>
-              <span className="text-[8px] lg:text-[9px] font-bold text-[#f97316] uppercase tracking-[0.2em] mt-0.5">{t('مجموعة مدارس', 'Groupe Scolaire')}</span>
+              <h1 className="font-black text-sm md:text-lg lg:text-2xl tracking-tighter text-[#0f172a] leading-none uppercase">{t('العمران', 'AL OUMRANE')}</h1>
+              <span className="text-[7px] md:text-[8px] lg:text-[9px] font-bold text-[#f97316] uppercase tracking-[0.15em] md:tracking-[0.2em] mt-0.5">{t('مجموعة مدارس', 'Groupe Scolaire')}</span>
             </div>
           </div>
 
@@ -721,12 +726,13 @@ const App: React.FC = () => {
           </div>
 
           {/* CTA Button & Mobile Menu */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 md:gap-3">
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="lg:hidden w-12 h-12 bg-slate-100 rounded-2xl flex items-center justify-center text-[#0f172a] hover:bg-slate-200 transition-colors"
+              className="lg:hidden w-9 h-9 md:w-12 md:h-12 bg-slate-100 rounded-xl md:rounded-2xl flex items-center justify-center text-[#0f172a] hover:bg-slate-200 transition-colors"
             >
-              <Menu size={24} />
+              <Menu size={20} className="md:hidden" />
+              <Menu size={24} className="hidden md:block" />
             </button>
             <button onClick={() => navigateTo('admissions')} className="hidden lg:flex items-center gap-2 bg-[#f97316] text-white px-6 py-3 rounded-full text-[11px] font-black uppercase tracking-[0.1em] hover:bg-[#0f172a] transition-all shadow-orange-glow">
               <ArrowUpRight size={14} />
